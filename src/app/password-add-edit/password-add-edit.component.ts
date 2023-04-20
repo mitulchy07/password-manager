@@ -22,15 +22,30 @@ export class PasswordAddEditComponent {
     })
   }
 
-  
-
   onFormSubmit(){
     if(this.passwordForm.valid){
-      console.log(this.passwordForm.value)
       let encryptedPassword = btoa(this.passwordForm.value.password);
-      console.log(encryptedPassword)
-      let decriptedPassword = atob(encryptedPassword);
-      console.log(decriptedPassword);
+
+      let myData = {
+        category: this.passwordForm.value.category,
+        app: this.passwordForm.value.app,
+        userName: this.passwordForm.value.userName,
+        encryptedPassword: encryptedPassword,
+      }
+
+      console.log(myData)
+      console.log(atob(myData.encryptedPassword))
+
+
+
+
+
+
+      // console.log(this.passwordForm.value)
+      // let encryptedPassword = btoa(this.passwordForm.value.password);
+      // console.log(encryptedPassword)
+      // let decriptedPassword = atob(encryptedPassword);
+      // console.log(decriptedPassword);
       
     }
   }
