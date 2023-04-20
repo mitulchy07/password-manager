@@ -26,9 +26,11 @@ export class PasswordAddEditComponent {
 
   onFormSubmit(){
     if(this.passwordForm.valid){
-      console.log(btoa(this.passwordForm.value.password))
-      let encryptedPassword = this.passwordForm.value;
+      console.log(this.passwordForm.value)
+      let encryptedPassword = btoa(this.passwordForm.value.password);
       console.log(encryptedPassword)
+      let decriptedPassword = atob(encryptedPassword);
+      console.log(decriptedPassword);
       
     }
   }
