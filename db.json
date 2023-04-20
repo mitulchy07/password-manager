@@ -6,6 +6,27 @@
       "userName": "test@test.com",
       "encryptedPassword": "SEVMTE8=",
       "id": 1
+    },
+    {
+      "category": "work",
+      "app": "insta",
+      "userName": "test2@test.com",
+      "encryptedPassword": "aGVsbG8yMw==",
+      "id": 2
+    },
+    {
+      "category": "school",
+      "app": "twitter",
+      "userName": "test3@test.com",
+      "encryptedPassword": "bmV2ZXJnaXZldXA=",
+      "id": 3
+    },
+    {
+      "category": "job",
+      "app": "gmail",
+      "userName": "hasn@gmail.com",
+      "encryptedPassword": "Ym9sYWphYmVuYQ==",
+      "id": 4
     }
   ]
 }

@@ -23,7 +23,7 @@ describe('AppComponent', () => {
   it(`should have as title 'password-manager'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('password-manager');
+    expect(app['title']).toEqual('password-manager');
   });
 
   it('should render title', () => {

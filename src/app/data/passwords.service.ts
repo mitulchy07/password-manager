@@ -6,10 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PasswordsService {
-
-  constructor(private _http: HttpClient ) { }
+  constructor(private _http: HttpClient ) {}
   
-  storingData(data: any): Observable<any>{
+  addingData(data: any): Observable<any>{
     return this._http.post('http://localhost:3000/passwords', data)
+  }
+  gettingData(): Observable<any>{
+    return this._http.get('http://localhost:3000/passwords')
   }
 }
