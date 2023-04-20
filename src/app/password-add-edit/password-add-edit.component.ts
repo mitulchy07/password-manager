@@ -1,6 +1,8 @@
+import { DialogRef } from '@angular/cdk/dialog';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { PasswordsService } from '../data/passwords.service';
+
 
 
 
@@ -13,7 +15,7 @@ export class PasswordAddEditComponent {
   passwordForm: FormGroup;
 
 
-  constructor(private _pf:FormBuilder){
+  constructor(private _pf:FormBuilder, private _passwordData: PasswordsService, private _dialogRef: DialogRef<PasswordAddEditComponent>){
     this.passwordForm = this._pf.group({
       category: '',
       app: '',
@@ -25,7 +27,6 @@ export class PasswordAddEditComponent {
   onFormSubmit(){
     if(this.passwordForm.valid){
       let encryptedPassword = btoa(this.passwordForm.value.password);
-
       let myData = {
         category: this.passwordForm.value.category,
         app: this.passwordForm.value.app,
@@ -33,20 +34,20 @@ export class PasswordAddEditComponent {
         encryptedPassword: encryptedPassword,
       }
 
-      console.log(myData)
-      console.log(atob(myData.encryptedPassword))
+      this._passwordData.storingData(myData).subscribe({
+        next: (val: any) =>{
+          alert('Password Added Successfully.')
+          this._dialogRef.close()
+          
+        },
+        error: (err: any) =>{
+          console.error(err)
+        }
+      })
 
+      // console.log(myData)
+      // console.log(atob(myData.encryptedPassword))
 
-
-
-
-
-      // console.log(this.passwordForm.value)
-      // let encryptedPassword = btoa(this.passwordForm.value.password);
-      // console.log(encryptedPassword)
-      // let decriptedPassword = atob(encryptedPassword);
-      // console.log(decriptedPassword);
-      
     }
   }
   

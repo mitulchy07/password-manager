@@ -1,0 +1,11 @@
+{
+  "passwords": [
+    {
+      "category": "fb",
+      "app": "tut tut",
+      "userName": "test@test.com",
+      "encryptedPassword": "SEVMTE8=",
+      "id": 1
+    }
+  ]
+}
