@@ -1,6 +1,7 @@
 import { Component, Inject, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CoreService } from '../core/core.service';
 import { PasswordsService } from '../data/passwords.service';
 // import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -15,6 +16,7 @@ export class PasswordAddEditComponent implements OnInit {
   constructor(
     private _pf: FormBuilder,
     private _passwordData: PasswordsService,
+    private _coreService: CoreService,
     private _dialogRef: MatDialogRef<PasswordAddEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
@@ -41,34 +43,34 @@ export class PasswordAddEditComponent implements OnInit {
           encryptedPassword: encryptedPassword,
         };
 
-        this._passwordData.updatingData(this.data.id , myData).subscribe({
+        this._passwordData.updatingData(this.data.id, myData).subscribe({
           next: (val: any) => {
-            alert('Password has been successfully updated.');
+            this._coreService.openSnackBar('Password has been successfully updated.', 'Done');
             this._dialogRef.close(true);
           },
           error: (err: any) => {
             console.error(err);
           },
         });
-      }
-      else{
+      } else {
         let encryptedPassword = btoa(this.passwordForm.value.password);
-      let myData = {
-        category: this.passwordForm.value.category,
-        app: this.passwordForm.value.app,
-        userName: this.passwordForm.value.userName,
-        encryptedPassword: encryptedPassword,
-      };
+        let myData = {
+          category: this.passwordForm.value.category,
+          app: this.passwordForm.value.app,
+          userName: this.passwordForm.value.userName,
+          encryptedPassword: encryptedPassword,
+        };
 
-      this._passwordData.addingData(myData).subscribe({
-        next: (val: any) => {
-          alert('Password Added Successfully.');
-          this._dialogRef.close(true);
-        },
-        error: (err: any) => {
-          console.error(err);
-        },
-      });
+        this._passwordData.addingData(myData).subscribe({
+          next: (val: any) => {
+            // alert('Password Added Successfully.');
+            this._coreService.openSnackBar('Password Added Successfully.', 'Done');
+            this._dialogRef.close(true);
+          },
+          error: (err: any) => {
+            console.error(err);
+          },
+        });
       }
 
       // console.log(myData)

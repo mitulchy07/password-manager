@@ -1,11 +1,3 @@
 {
-  "passwords": [
-    {
-      "category": "noprob",
-      "app": "letsgo",
-      "userName": "Iwillseeyou",
-      "encryptedPassword": "bGV0cw==",
-      "id": 1
-    }
-  ]
+  "passwords": []
 }

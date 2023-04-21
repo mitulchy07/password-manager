@@ -5,7 +5,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { PasswordsService } from './data/passwords.service';
-import { DialogRef } from '@angular/cdk/dialog';
+import { CoreService } from './core/core.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-root',
@@ -33,7 +35,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private _dialog: MatDialog,
-    private _passwordService: PasswordsService
+    private _passwordService: PasswordsService,
+    private _coreService: CoreService,
   ) {}
   ngOnInit(): void {
     this.gettingData();
@@ -82,7 +85,8 @@ export class AppComponent implements OnInit {
   deleteData(id: number){
     this._passwordService.deleteData(id).subscribe({
       next: (res) => {
-        alert('Password Deleted')
+        this._coreService.openSnackBar('Password Deleted!!!', 'Done');
+
         this.gettingData();
       },
       error: console.log,
