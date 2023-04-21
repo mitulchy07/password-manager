@@ -1,13 +1,6 @@
 {
   "passwords": [
     {
-      "category": "work",
-      "app": "google",
-      "userName": "test@test.com",
-      "encryptedPassword": "NDU0bHNkbGZq",
-      "id": 1
-    },
-    {
       "category": "home",
       "app": "Facebook",
       "userName": "test4@test4.com",
@@ -15,10 +8,10 @@
       "id": 3
     },
     {
-      "category": "home",
+      "category": "home4",
       "app": "Linkedin",
       "userName": "Test1@test.com",
-      "encryptedPassword": "bmV2ZXJnaXZldXA=",
+      "encryptedPassword": "aGVsbG8=",
       "id": 4
     },
     {
@@ -27,6 +20,13 @@
       "userName": "test@testing.com",
       "encryptedPassword": "b252ZXJjZWw=",
       "id": 5
+    },
+    {
+      "category": "home 24",
+      "app": "Linkedin",
+      "userName": "Test1@test.com",
+      "encryptedPassword": "Zm9yZ2V0cGFzc3dvcmQ=",
+      "id": 6
     }
   ]
 }

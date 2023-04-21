@@ -91,4 +91,18 @@ export class AppComponent implements OnInit {
       error: console.log,
     })
   }
+
+  passwordUpdateModal(data: any) {
+    const dialogRef =  this._dialog.open(PasswordAddEditComponent, {
+      data: data,
+    });     
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if(val){
+          this.gettingData();
+        }
+      }
+    })
+   }
+
 }
