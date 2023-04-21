@@ -1,32 +1,32 @@
 {
   "passwords": [
     {
-      "category": "fb",
-      "app": "tut tut",
+      "category": "work",
+      "app": "google",
       "userName": "test@test.com",
-      "encryptedPassword": "SEVMTE8=",
+      "encryptedPassword": "NDU0bHNkbGZq",
       "id": 1
     },
     {
-      "category": "work",
-      "app": "insta",
-      "userName": "test2@test.com",
-      "encryptedPassword": "aGVsbG8yMw==",
-      "id": 2
-    },
-    {
-      "category": "school",
-      "app": "twitter",
-      "userName": "test3@test.com",
-      "encryptedPassword": "bmV2ZXJnaXZldXA=",
+      "category": "home",
+      "app": "Facebook",
+      "userName": "test4@test4.com",
+      "encryptedPassword": "aGVsbG90aGVyZQ==",
       "id": 3
     },
     {
-      "category": "job",
-      "app": "gmail",
-      "userName": "hasn@gmail.com",
-      "encryptedPassword": "Ym9sYWphYmVuYQ==",
+      "category": "home",
+      "app": "Linkedin",
+      "userName": "Test1@test.com",
+      "encryptedPassword": "bmV2ZXJnaXZldXA=",
       "id": 4
+    },
+    {
+      "category": "deployment",
+      "app": "vercel",
+      "userName": "test@testing.com",
+      "encryptedPassword": "b252ZXJjZWw=",
+      "id": 5
     }
   ]
 }

@@ -1,6 +1,6 @@
-import { DialogRef } from '@angular/cdk/dialog';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { PasswordsService } from '../data/passwords.service';
 // import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -15,7 +15,7 @@ export class PasswordAddEditComponent {
   constructor(
     private _pf: FormBuilder,
     private _passwordData: PasswordsService,
-    private _dialogRef: DialogRef<PasswordAddEditComponent>
+    private _dialogRef: MatDialogRef<PasswordAddEditComponent>
   ) {
     this.passwordForm = this._pf.group({
       category: '',
@@ -39,7 +39,7 @@ export class PasswordAddEditComponent {
       this._passwordData.addingData(myData).subscribe({
         next: (val: any) => {
           alert('Password Added Successfully.');
-          this._dialogRef.close();
+          this._dialogRef.close(true);
         },
         error: (err: any) => {
           console.error(err);

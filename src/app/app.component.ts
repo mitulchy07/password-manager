@@ -5,6 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { PasswordsService } from './data/passwords.service';
+import { DialogRef } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,7 @@ export class AppComponent implements OnInit {
     'encryptedPassword',
     'category',
     'app',
+    'action',
   ];
   dataSource!: MatTableDataSource<any>;
 
@@ -38,11 +40,18 @@ export class AppComponent implements OnInit {
   }
 
   passwordAddEditModal() {
-    this._dialog.open(PasswordAddEditComponent);
+   const dialogRef =  this._dialog.open(PasswordAddEditComponent);
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if(val){
+          this.gettingData();
+        }
+      }
+    })
   }
-    decodePassword(encodedPassword: string) {
-    this.decodedPassword = atob(encodedPassword);
-  }
+  //   decodePassword(encodedPassword: string) {
+  //   this.decodedPassword = atob(encodedPassword);
+  // }
 
   gettingData() {
     this._passwordService.gettingData().subscribe({
@@ -55,9 +64,6 @@ export class AppComponent implements OnInit {
           row.decodedPassword = atob(row.encryptedPassword);
           return row;
         });
-        
-        
-
       },
       error: console.log,
     });
@@ -73,5 +79,16 @@ export class AppComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+
+  deleteData(id: number){
+    this._passwordService.deleteData(id).subscribe({
+      next: (res) => {
+        alert('Password Deleted')
+        this.gettingData();
+      },
+      error: console.log,
+    })
   }
 }
