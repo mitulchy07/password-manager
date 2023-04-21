@@ -49,9 +49,6 @@ export class AppComponent implements OnInit {
       }
     })
   }
-  //   decodePassword(encodedPassword: string) {
-  //   this.decodedPassword = atob(encodedPassword);
-  // }
 
   gettingData() {
     this._passwordService.gettingData().subscribe({
@@ -93,9 +90,21 @@ export class AppComponent implements OnInit {
   }
 
   passwordUpdateModal(data: any) {
+    // this.dataSource.data = data((row: any) => {
+    //   row.decodedPassword = atob(row.encryptedPassword);
+    //   return row;
+    // });
     const dialogRef =  this._dialog.open(PasswordAddEditComponent, {
-      data: data,
-    });     
+      data: {
+        'category': data.category,
+        'app': data.app,
+        'userName': data.userName,
+        'password': atob(data.encryptedPassword),
+        'id': data.id,
+      }
+    });  
+    console.log(data)
+       
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if(val){

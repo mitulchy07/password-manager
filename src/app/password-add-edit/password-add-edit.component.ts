@@ -43,7 +43,7 @@ export class PasswordAddEditComponent implements OnInit {
 
         this._passwordData.updatingData(this.data.id , myData).subscribe({
           next: (val: any) => {
-            alert('Password has been updated Successfully.');
+            alert('Password has been successfully updated.');
             this._dialogRef.close(true);
           },
           error: (err: any) => {

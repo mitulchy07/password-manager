@@ -1,32 +1,11 @@
 {
   "passwords": [
     {
-      "category": "home",
-      "app": "Facebook",
-      "userName": "test4@test4.com",
-      "encryptedPassword": "aGVsbG90aGVyZQ==",
-      "id": 3
-    },
-    {
-      "category": "home4",
-      "app": "Linkedin",
-      "userName": "Test1@test.com",
-      "encryptedPassword": "aGVsbG8=",
-      "id": 4
-    },
-    {
-      "category": "deployment",
-      "app": "vercel",
-      "userName": "test@testing.com",
-      "encryptedPassword": "b252ZXJjZWw=",
-      "id": 5
-    },
-    {
-      "category": "home 24",
-      "app": "Linkedin",
-      "userName": "Test1@test.com",
-      "encryptedPassword": "Zm9yZ2V0cGFzc3dvcmQ=",
-      "id": 6
+      "category": "noprob",
+      "app": "letsgo",
+      "userName": "Iwillseeyou",
+      "encryptedPassword": "bGV0cw==",
+      "id": 1
     }
   ]
 }
