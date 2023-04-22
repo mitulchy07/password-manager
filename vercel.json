@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "password-manager/angular.json",
+      "src": "angular.json",
       "use": "@vercel/static-build",
       "config": {
         "buildCommand": "ng build --prod",
