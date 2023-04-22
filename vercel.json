@@ -6,7 +6,7 @@
       "use": "@vercel/static-build",
       "config": {
         "buildCommand": "ng build --prod",
-        "outputDirectory": "dist/my-angular-app"
+        "outputDirectory": "dist/password-manager"
       }
     }
   ]
