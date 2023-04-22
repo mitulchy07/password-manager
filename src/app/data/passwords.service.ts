@@ -9,15 +9,15 @@ export class PasswordsService {
   constructor(private _http: HttpClient ) {}
   
   addingData(data: any): Observable<any>{
-    return this._http.post('https://password-manager-git-main-mitulchy07.vercel.app//passwords', data)
+    return this._http.post('http://localhost:3000/passwords', data)
   }
   updatingData(id: number, data: any): Observable<any>{
-    return this._http.put(`https://password-manager-git-main-mitulchy07.vercel.app//passwords/${id}`, data)
+    return this._http.put(`http://localhost:3000//passwords/${id}`, data)
   }
   gettingData(): Observable<any>{
-    return this._http.get('https://password-manager-git-main-mitulchy07.vercel.app//passwords')
+    return this._http.get('http://localhost:3000/passwords')
   }
   deleteData(id:number): Observable<any>{
-    return this._http.delete(`https://password-manager-git-main-mitulchy07.vercel.app//passwords/${id}`);
+    return this._http.delete(`http://localhost:3000/passwords/${id}`);
   }
 }
