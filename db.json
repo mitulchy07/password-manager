@@ -1,13 +1,6 @@
 {
   "passwords": [
     {
-      "category": "Work",
-      "app": "Facebook",
-      "userName": "test@test.com",
-      "encryptedPassword": "TGV0c1NlZTEyMw==",
-      "id": 1
-    },
-    {
       "category": "Home",
       "app": "Whatsapp",
       "userName": "test2@test.com",
@@ -20,6 +13,13 @@
       "userName": "Test3@test.com",
       "encryptedPassword": "bm90Zm91bmQ=",
       "id": 3
+    },
+    {
+      "category": "job",
+      "app": "hello",
+      "userName": "test@test4.com",
+      "encryptedPassword": "dGVzdGluZw==",
+      "id": 4
     }
   ]
 }
