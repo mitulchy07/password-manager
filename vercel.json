@@ -2,12 +2,12 @@
   "version": 2,
   "builds": [
     {
-      "src": "angular.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "buildCommand": "ng build --prod",
-        "outputDirectory": "dist/password-manager"
-      }
+      "src": "*/**",
+      "use": "@vercel/static"
     }
-  ]
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "outputDirectory": "dist"
 }
