@@ -1,6 +1,5 @@
 # PasswordManager
 This is a simple personal password manager tool developed using TypeScript and Angular. It allows users to securely store and manage their passwords for different applications.
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
 
 
 ## Features
@@ -16,31 +15,6 @@ Edit Password: Users can edit the details of a stored password, including the pa
 
 Delete Password: Users can delete a stored password from their list of passwords.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Password Storage Format
-
-Passwords are stored in the following format:
-
-[
-  { 
-    id: 1, 
-    category: 'work', 
-    app: 'outlook', 
-    userName: 'testuser@mytest.com', 
-    encryptedPassword: 'TXlQYXNzd29yZEAxMjM=' 
-  },
-  { 
-    id: 2, 
-    category: 'school', 
-    app: 'messenger', 
-    userName: 'testuser@mytest.com', 
-    encryptedPassword: 'TmV3UGFzc3dvcmRAMTIz' 
-  }
-]
-Passwords are encrypted using Base64 encoding.
 
 ## Setup
 
@@ -60,8 +34,15 @@ ng serve
 Navigate to http://localhost:4200/ in your web browser to access the password manager tool.
 
 
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+
+
 ## API
-Start the development server using the following command:
+Start the JSON server using the following command:
 
 json-server --watch db.json
 
