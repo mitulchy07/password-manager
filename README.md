@@ -46,3 +46,26 @@ Start the JSON server using the following command:
 
 `json-server --watch db.json`
 
+## Password Storage Format
+
+Passwords are stored in the following format:
+
+```json
+[
+  { 
+    id: 1, 
+    category: 'work', 
+    app: 'outlook', 
+    userName: 'testuser@mytest.com', 
+    encryptedPassword: 'TXlQYXNzd29yZEAxMjM=' 
+  },
+  { 
+    id: 2, 
+    category: 'school', 
+    app: 'messenger', 
+    userName: 'testuser@mytest.com', 
+    encryptedPassword: 'TmV3UGFzc3dvcmRAMTIz' 
+  }
+]
+```
+Passwords are encrypted using Base64 encoding.
