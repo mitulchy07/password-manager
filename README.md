@@ -24,12 +24,12 @@ Clone the repository to your local machine.
 
 Install the dependencies using the following command:
 
-npm install
+`npm install`
 
 
 Start the development server using the following command:
 
-ng serve
+`ng serve`
 
 Navigate to http://localhost:4200/ in your web browser to access the password manager tool.
 
@@ -44,5 +44,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ## API
 Start the JSON server using the following command:
 
-json-server --watch db.json
+`json-server --watch db.json`
 
