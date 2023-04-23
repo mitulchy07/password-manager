@@ -51,21 +51,30 @@ Start the JSON server using the following command:
 Passwords are stored in the following format:
 
 ```json
-[
-  { 
-    id: 1, 
-    category: 'work', 
-    app: 'outlook', 
-    userName: 'testuser@mytest.com', 
-    encryptedPassword: 'TXlQYXNzd29yZEAxMjM=' 
-  },
-  { 
-    id: 2, 
-    category: 'school', 
-    app: 'messenger', 
-    userName: 'testuser@mytest.com', 
-    encryptedPassword: 'TmV3UGFzc3dvcmRAMTIz' 
-  }
-]
+{
+  "passwords": [
+    {
+      "category": "Home",
+      "app": "Whatsapp",
+      "userName": "test2@test.com",
+      "encryptedPassword": "SWRvbnRLbm93",
+      "id": 2
+    },
+    {
+      "category": "Home",
+      "app": "Facebook",
+      "userName": "Test3@test.com",
+      "encryptedPassword": "bm90Zm91bmQ=",
+      "id": 3
+    },
+    {
+      "category": "Home",
+      "app": "Linkedin",
+      "userName": "test4@test.com",
+      "encryptedPassword": "TGlzdGVudG9tZWFnYWlu",
+      "id": 5
+    }
+  ]
+}
 ```
 Passwords are encrypted using Base64 encoding.
