@@ -44,6 +44,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ## API
 Start the JSON server using the following command:
 
+`npm install -g json-server`
+
 `json-server --watch db.json`
 
 ## Password Storage Format
