@@ -15,8 +15,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  [x: string]: any;
-  decodedPassword!: string;
+  // [x: string]: any;
+  // decodedPassword!: string;
 
 
 
